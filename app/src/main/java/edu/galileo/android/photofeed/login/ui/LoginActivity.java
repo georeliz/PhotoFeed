@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import edu.galileo.android.photofeed.MainActivity;
+import edu.galileo.android.photofeed.main.ui.MainActivity;
 import edu.galileo.android.photofeed.PhotoFeedApp;
 import edu.galileo.android.photofeed.R;
 import edu.galileo.android.photofeed.login.LoginPresenter;

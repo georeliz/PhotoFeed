@@ -2,7 +2,6 @@ package edu.galileo.android.photofeed.login;
 
 import org.greenrobot.eventbus.Subscribe;
 
-import edu.galileo.android.photofeed.MainActivity;
 import edu.galileo.android.photofeed.libs.base.EventBus;
 import edu.galileo.android.photofeed.login.events.LoginEvent;
 import edu.galileo.android.photofeed.login.ui.LoginView;
