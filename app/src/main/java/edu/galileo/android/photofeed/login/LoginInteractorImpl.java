@@ -6,7 +6,7 @@ package edu.galileo.android.photofeed.login;
 public class LoginInteractorImpl implements LoginInteractor {
     private LoginRepository loginRepository;
 
-    public LoginInteractorImpl(LoginRepository repository) {
+    public LoginInteractorImpl(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
     }
 

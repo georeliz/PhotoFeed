@@ -1,16 +1,13 @@
 package edu.galileo.android.photofeed.login;
 
-import com.firebase.client.AuthData;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
+
 import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+
 
 import java.util.Map;
 
 import edu.galileo.android.photofeed.domain.FirebaseAPI;
 import edu.galileo.android.photofeed.domain.FirebaseActionListenerCallback;
-import edu.galileo.android.photofeed.libs.GreenRobotEventBus;
 import edu.galileo.android.photofeed.libs.base.EventBus;
 import edu.galileo.android.photofeed.login.events.LoginEvent;
 

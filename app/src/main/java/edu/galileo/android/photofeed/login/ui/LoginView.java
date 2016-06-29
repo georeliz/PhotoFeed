@@ -12,10 +12,14 @@ public interface LoginView {
     void handleSignUp();
     void handleSignIn();
 
-    void newUserSuccess();
     void navigateToMainScreen();
+    void loginError(String error);
+
+    void newUserSuccess();
+    void newUserError(String error);
+
     void setUserEmail(String email);
 
-    void loginError(String error);
-    void newUserError(String error);
+
+
 }

@@ -98,7 +98,7 @@ public class FirebaseAPI {
         String email = null;
         if(firebase.getAuth() != null){
             Map<String, Object> providerData = firebase.getAuth().getProviderData();
-            email = providerData.get(email).toString();
+            email = providerData.get("email").toString();
         }
         return email;
     }

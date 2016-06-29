@@ -132,6 +132,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void newUserError(String error) {
+        editTxtPassword.setText("");;
+        String msgError = String.format(getString(R.string.login_error_message_signup), error);
+        editTxtPassword.setError(msgError);
 
     }
 
