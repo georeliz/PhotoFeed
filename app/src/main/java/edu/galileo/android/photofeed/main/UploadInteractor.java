@@ -3,8 +3,8 @@ package edu.galileo.android.photofeed.main;
 import android.location.Location;
 
 /**
- * Created by Lab1 on 29/06/2016.
+ * Created by Gerson on 1/07/2016.
  */
-public interface MainInteractor {
+public interface UploadInteractor {
     void execute(Location location, String path);
 }

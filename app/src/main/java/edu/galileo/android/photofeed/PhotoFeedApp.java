@@ -1,6 +1,8 @@
 package edu.galileo.android.photofeed;
 
 import android.app.Application;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 
 import com.firebase.client.Firebase;
 
@@ -10,6 +12,16 @@ import edu.galileo.android.photofeed.login.di.DaggerLoginComponent;
 import edu.galileo.android.photofeed.login.di.LoginComponent;
 import edu.galileo.android.photofeed.login.di.LoginModule;
 import edu.galileo.android.photofeed.login.ui.LoginView;
+import edu.galileo.android.photofeed.main.di.DaggerMainComponent;
+import edu.galileo.android.photofeed.main.di.MainComponent;
+import edu.galileo.android.photofeed.main.di.MainModule;
+import edu.galileo.android.photofeed.main.ui.MainView;
+import edu.galileo.android.photofeed.photolist.adapters.OnItemClickListener;
+import edu.galileo.android.photofeed.photolist.di.DaggerPhotoListComponent;
+import edu.galileo.android.photofeed.photolist.di.PhotoListComponent;
+import edu.galileo.android.photofeed.photolist.di.PhotoListModule;
+import edu.galileo.android.photofeed.photolist.ui.PhotoListFragment;
+import edu.galileo.android.photofeed.photolist.ui.PhotoListView;
 
 /**
  * Created by Lab1 on 28/06/2016.
@@ -56,4 +68,24 @@ public class PhotoFeedApp extends Application {
                .loginModule(new LoginModule(view))
                .build();
    }
+
+    public MainComponent getMainComponent(MainView view, FragmentManager fragmentManager, Fragment[]fragments, String[] titles){
+        return DaggerMainComponent
+                .builder()
+                .photoFeedAppModule(photoFeedAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(null))
+                .mainModule(new MainModule(view,titles, fragments, fragmentManager))
+                .build();
+    }
+
+    public PhotoListComponent getPhotoListComponent(PhotoListFragment fragment,PhotoListView view, OnItemClickListener onItemClickListener){
+        return DaggerPhotoListComponent
+                .builder()
+                .photoFeedAppModule(photoFeedAppModule)
+                .domainModule(domainModule)
+                .libsModule(new LibsModule(fragment))
+                .photoListModule(new PhotoListModule(view, onItemClickListener))
+                .build();
+    }
 }
